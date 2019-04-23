@@ -42,9 +42,9 @@ public class SonarClientTest {
         SonarParser parser = new SonarParser(result);
 
         // check that a quality gate is returned
-        JSONObject qgDetails = parser.GetQualityGateDetails();
-
-        String qgResult = qgDetails.getString("level");
+//        JSONObject qgDetails = parser.GetQualityGateDetails();
+//        String qgResult = qgDetails.getString("level");
+        String qgResult = parser.getProjectQualityGateStatus();
         Assert.assertEquals("ERROR", qgResult);
     }
 

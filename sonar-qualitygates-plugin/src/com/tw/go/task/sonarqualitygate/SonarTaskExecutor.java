@@ -53,7 +53,7 @@ public class SonarTaskExecutor extends TaskExecutor {
             JSONObject lastPeriod = (JSONObject) periods.get(periods.length() - 1);
 
             String lastDate = (String) lastPeriod.get("date");
-            String lastVersion = (String) lastPeriod.get("parameter");
+//            String lastVersion = (String) lastPeriod.get("parameter");
 
             if (!("".equals(stageName)) && !("".equals(jobName)) && !("".equals(jobCounter))) {
                 String scheduledTime = getScheduledTime();
@@ -83,7 +83,7 @@ public class SonarTaskExecutor extends TaskExecutor {
                         log("No new scan has been found !");
 
                         log("Date of Sonar scan: " + lastDate);
-                        log("Version of Sonar scan: " + lastVersion);
+//                        log("Version of Sonar scan: " + lastVersion);
 
                         return new Result(false, "Failed to get a newer quality gate for " + sonarProjectKey
                                 + ". The present quality gate is older than the start of the Sonar scan task.");
@@ -94,7 +94,7 @@ public class SonarTaskExecutor extends TaskExecutor {
                 }
 
                 log("Date of Sonar scan: " + lastDate);
-                log("Version of Sonar scan: " + lastVersion);
+//                log("Version of Sonar scan: " + lastVersion);
 
                 SonarParser parser = new SonarParser(result);
 
@@ -108,7 +108,7 @@ public class SonarTaskExecutor extends TaskExecutor {
             else {
 
                 log("Date of Sonar scan: " + lastDate);
-                log("Version of Sonar scan: " + lastVersion);
+//                log("Version of Sonar scan: " + lastVersion);
 
                 SonarParser parser = new SonarParser(result);
 
